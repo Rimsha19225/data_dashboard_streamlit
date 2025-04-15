@@ -21,7 +21,8 @@ if uploaded_file is not None:
     unique_value = df[selected_column].unique()
     selected_value = st.selectbox("Select value", unique_value)
     
-    filtered_df = df[df[selected_column] == selected_column]
+    # ✅ Fixed filtering logic
+    filtered_df = df[df[selected_column] == selected_value]
     st.write(filtered_df)
     
     st.subheader("Plot Data")
